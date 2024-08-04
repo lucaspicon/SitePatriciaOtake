@@ -356,7 +356,7 @@ header.sticky .nav-bar {
   max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
-  padding: 6rem 2rem 2rem 2rem;
+  padding: 6rem 2rem 2rem;
 }
 
 .sub-section {
@@ -364,7 +364,7 @@ header.sticky .nav-bar {
   max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
-  padding: 6rem 0;
+  padding: 6rem 2rem;
 }
 
 .section-titulo-01 {
@@ -1049,7 +1049,7 @@ header.sticky .nav-bar {
   font-weight: 700;
 }
 
-.contato-form input,
+/*.contato-form input,
 .contato-form textarea {
   border: none;
   color: var(--primeira-cor);
@@ -1087,7 +1087,7 @@ header.sticky .nav-bar {
   margin-top: 0;
   border-radius: 5px;
   cursor: pointer;
-}
+}*/
 
 /*=======Footer=======*/
 footer {
