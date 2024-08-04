@@ -410,7 +410,7 @@ header.sticky .nav-bar {
 
 .sobre-img img {
   max-width: 100%;
-  min-width: 500px;
+  min-width: 400px;
   border-radius: 10px;
 }
 
@@ -1049,6 +1049,9 @@ header.sticky .nav-bar {
   font-weight: 700;
 }
 
+.container-form{
+
+}
 /*.contato-form input,
 .contato-form textarea {
   border: none;
@@ -1161,7 +1164,7 @@ footer a {
 }
 
 /*=======Media query max-width 599px=======*/
-@media screen and (max-width: 599.9px) {
+@media screen and (max-width: 1250px) {
   /*=======Header navigation menu=======*/
   .navigation {
     position: fixed;
