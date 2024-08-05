@@ -624,6 +624,8 @@ header.sticky .nav-bar {
   font-style: italic;
 }
 
+
+
 .experience-card span {
   color: var(--terceira-cor);
 }
@@ -826,7 +828,7 @@ header.sticky .nav-bar {
 }
 
 .convenios-produtos-modal {
-  z-index: 999999;
+  z-index: 1000;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -862,6 +864,7 @@ header.sticky .nav-bar {
 .convenios-produtos-modal.active {
   visibility: visible;
   opacity: 1;
+  display: flex;
 }
 
 .convenios-produtos-modal.active .convenios-produtos-modal-body {
@@ -1342,7 +1345,7 @@ footer a {
 }
 
 /*=======Media query max-width 730px=======*/
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 730px) {
   /*=======Common styles for all sections=======*/
   body {
     margin: 5rem 0 0 0;
@@ -1367,6 +1370,7 @@ footer a {
   }
 
   .home-container .home-img img {
+    margin-top: 30px;
     width: 65%;
     transform: translate(80px, -180px);
   }
@@ -1378,6 +1382,10 @@ footer a {
   .media-icons {
     margin-bottom: 80px;
   }
+
+  .experience-card {
+  padding: 23px ;
+}
 
   /*=======Get-in-touch section=======*/
   .entrar-em-contato .contato-card {
@@ -1400,4 +1408,16 @@ footer a {
   .swiper-button-prev .fa-chevron-left {
     display: none;
   }
+
+  .container-form{
+    display: flex;
+    padding: auto;
+  }
+  .contato-right p{
+    margin-left: 15px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  
 }

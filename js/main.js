@@ -27,7 +27,7 @@ modalCloseBtns.forEach((modalCloseBtns) => {
   })
 })
 
-//Portfolio section - Modal
+//Convenios e produtos section - Modal
 
 const portfolioModals = document.querySelectorAll(".convenios-produtos-modal")
 const imgCards = document.querySelectorAll(".img-card")
@@ -35,21 +35,49 @@ const portfolioCloseBtns = document.querySelectorAll(
   ".convenios-produtos-close-btn"
 )
 
-var portfolioModal = function (modalClick) {
-  portfolioModals[modalClick].classList.add("active")
+// Função para abrir um modal
+function openModal(modalIndex) {
+  portfolioModals[modalIndex].classList.add("active")
 }
 
+// Função para fechar todos os modais
+function closeAllModals() {
+  portfolioModals.forEach((portfolioModalView) => {
+    portfolioModalView.classList.remove("active")
+  })
+}
+
+// Adiciona evento de clique para abrir o modal
 imgCards.forEach((imgCard, i) => {
-  imgCard.addEventListener("click", () => {
-    portfolioModal(i)
+  imgCard.addEventListener("click", (event) => {
+    openModal(i)
+    event.stopPropagation() // Previne que o clique se propague
   })
 })
 
+// Adiciona evento de clique para fechar o modal ao clicar no botão de fechamento
 portfolioCloseBtns.forEach((portfolioCloseBtn) => {
-  portfolioCloseBtn.addEventListener("click", () => {
-    portfolioModals.forEach((portfolioModalView) => {
-      portfolioModalView.classList.remove("active")
-    })
+  portfolioCloseBtn.addEventListener("click", (event) => {
+    closeAllModals()
+    event.stopPropagation() // Previne que o clique se propague
+  })
+})
+
+// Adiciona evento de clique para fechar o modal ao clicar fora dele
+document.addEventListener("click", (event) => {
+  const isClickInside = Array.from(portfolioModals).some((modal) =>
+    modal.contains(event.target)
+  )
+
+  if (!isClickInside) {
+    closeAllModals()
+  }
+})
+
+// Adiciona um evento de clique para evitar o fechamento quando clicado dentro do modal
+portfolioModals.forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    event.stopPropagation() // Impede que o clique dentro do modal feche o modal
   })
 })
 
