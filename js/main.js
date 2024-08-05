@@ -8,33 +8,21 @@ window.addEventListener("scroll", function () {
 document.querySelectorAll(".servicos-card").forEach((card) => {
   card.addEventListener("click", () => {
     card.nextElementSibling.classList.add("active")
-    history.pushState({ modal: true }, null) // Adiciona um novo estado ao histórico
   })
 })
 
 document.querySelectorAll(".modal-close-btn").forEach((button) => {
   button.addEventListener("click", () => {
-    closeModal()
+    button.closest(".servicos-modal").classList.remove("active")
   })
 })
 
 document.querySelectorAll(".servicos-modal").forEach((modal) => {
   modal.addEventListener("click", (e) => {
     if (!e.target.closest(".servicos-modal-body")) {
-      closeModal()
+      modal.classList.remove("active")
     }
   })
-})
-
-function closeModal() {
-  document.querySelectorAll(".servicos-modal.active").forEach((modal) => {
-    modal.classList.remove("active")
-  })
-  history.back() // Volta ao estado anterior no histórico
-}
-
-window.addEventListener("popstate", () => {
-  closeModal()
 })
 
 //Convenios e produtos section - Modal
