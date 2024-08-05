@@ -624,8 +624,6 @@ header.sticky .nav-bar {
   font-style: italic;
 }
 
-
-
 .experience-card span {
   color: var(--terceira-cor);
 }
@@ -1052,8 +1050,7 @@ header.sticky .nav-bar {
   font-weight: 700;
 }
 
-.container-form{
-
+.container-form {
 }
 /*.contato-form input,
 .contato-form textarea {
@@ -1384,8 +1381,8 @@ footer a {
   }
 
   .experience-card {
-  padding: 23px ;
-}
+    padding: 23px;
+  }
 
   /*=======Get-in-touch section=======*/
   .entrar-em-contato .contato-card {
@@ -1409,15 +1406,13 @@ footer a {
     display: none;
   }
 
-  .container-form{
+  .container-form {
     display: flex;
     padding: auto;
   }
-  .contato-right p{
+  .contato-right p {
     margin-left: 15px;
     justify-content: center;
     text-align: center;
   }
-
-  
 }

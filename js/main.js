@@ -5,79 +5,72 @@ window.addEventListener("scroll", function () {
 })
 
 //Servicos section - Modal
-const serviceModals = document.querySelectorAll(".servicos-modal")
-const learnmoreBtns = document.querySelectorAll(".saiba-mais-btn")
-const modalCloseBtns = document.querySelectorAll(".modal-close-btn")
-
-var modal = function (modalClick) {
-  serviceModals[modalClick].classList.add("active")
-}
-
-learnmoreBtns.forEach((learnmoreBtn, i) => {
-  learnmoreBtn.addEventListener("click", () => {
-    modal(i)
+document.querySelectorAll(".servicos-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    card.nextElementSibling.classList.add("active")
   })
 })
 
-modalCloseBtns.forEach((modalCloseBtns) => {
-  modalCloseBtns.addEventListener("click", () => {
-    serviceModals.forEach((modalView) => {
-      modalView.classList.remove("active")
-    })
+document.querySelectorAll(".modal-close-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    button.closest(".servicos-modal").classList.remove("active")
+  })
+})
+
+document.querySelectorAll(".servicos-modal").forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    if (!e.target.closest(".servicos-modal-body")) {
+      modal.classList.remove("active")
+    }
   })
 })
 
 //Convenios e produtos section - Modal
 
-const portfolioModals = document.querySelectorAll(".convenios-produtos-modal")
-const imgCards = document.querySelectorAll(".img-card")
-const portfolioCloseBtns = document.querySelectorAll(
-  ".convenios-produtos-close-btn"
-)
-
-// Função para abrir um modal
-function openModal(modalIndex) {
-  portfolioModals[modalIndex].classList.add("active")
-}
-
-// Função para fechar todos os modais
-function closeAllModals() {
-  portfolioModals.forEach((portfolioModalView) => {
-    portfolioModalView.classList.remove("active")
-  })
-}
-
-// Adiciona evento de clique para abrir o modal
-imgCards.forEach((imgCard, i) => {
-  imgCard.addEventListener("click", (event) => {
-    openModal(i)
-    event.stopPropagation() // Previne que o clique se propague
-  })
-})
-
-// Adiciona evento de clique para fechar o modal ao clicar no botão de fechamento
-portfolioCloseBtns.forEach((portfolioCloseBtn) => {
-  portfolioCloseBtn.addEventListener("click", (event) => {
-    closeAllModals()
-    event.stopPropagation() // Previne que o clique se propague
-  })
-})
-
-// Adiciona evento de clique para fechar o modal ao clicar fora dele
-document.addEventListener("click", (event) => {
-  const isClickInside = Array.from(portfolioModals).some((modal) =>
-    modal.contains(event.target)
+document.addEventListener("DOMContentLoaded", () => {
+  const conveniosProdutosModals = document.querySelectorAll(
+    ".convenios-produtos-modal"
+  )
+  const imgCards = document.querySelectorAll(".img-card")
+  const conveniosProdutosCloseBtns = document.querySelectorAll(
+    ".convenios-produtos-close-btn"
   )
 
-  if (!isClickInside) {
-    closeAllModals()
+  // Função para abrir um modal
+  function openModal(modalIndex) {
+    conveniosProdutosModals[modalIndex].classList.add("active")
   }
-})
 
-// Adiciona um evento de clique para evitar o fechamento quando clicado dentro do modal
-portfolioModals.forEach((modal) => {
-  modal.addEventListener("click", (event) => {
-    event.stopPropagation() // Impede que o clique dentro do modal feche o modal
+  // Função para fechar todos os modais
+  function closeAllModals() {
+    conveniosProdutosModals.forEach((conveniosProdutosModal) => {
+      conveniosProdutosModal.classList.remove("active")
+    })
+  }
+
+  // Adiciona evento de clique para abrir o modal
+  imgCards.forEach((imgCard, i) => {
+    imgCard.addEventListener("click", (event) => {
+      openModal(i)
+      event.stopPropagation() // Previne que o clique se propague
+    })
+  })
+
+  // Adiciona evento de clique para fechar o modal ao clicar no botão de fechamento
+  conveniosProdutosCloseBtns.forEach((btn, i) => {
+    btn.addEventListener("click", (event) => {
+      event.stopPropagation() // Previne que o clique se propague
+      closeAllModals()
+    })
+  })
+
+  // Fecha o modal ao clicar fora do conteúdo do modal
+  conveniosProdutosModals.forEach((modal) => {
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeAllModals()
+      }
+    })
   })
 })
 
