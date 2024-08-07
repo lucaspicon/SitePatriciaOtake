@@ -1350,7 +1350,7 @@ footer a {
 @media screen and (max-width: 730px) {
   /*=======Common styles for all sections=======*/
   body {
-    margin: 5rem 0 0 0;
+    margin: 4rem 0 0 0;
   }
 
   .section-titulo-01 {
@@ -1378,16 +1378,16 @@ footer a {
     transform: translate(80px, -180px);
   }
 
-  .home .home-container .info {
-    font-size: 0.8rem;
-  }
-
   .media-icons {
     margin-bottom: 80px;
   }
 
   .experience-card {
-    padding: 23px;
+    padding: 19px;
+  }
+
+  .edu-lista .item p span {
+    font-size: 15px;
   }
 
   /*=======Get-in-touch section=======*/

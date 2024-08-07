@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para abrir um modal
   function openModal(modalIndex) {
     conveniosProdutosModals[modalIndex].classList.add("active")
+    history.pushState({ modalIndex: modalIndex }, null, "")
   }
 
   // Função para fechar todos os modais
@@ -57,10 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   // Adiciona evento de clique para fechar o modal ao clicar no botão de fechamento
-  conveniosProdutosCloseBtns.forEach((btn, i) => {
+  conveniosProdutosCloseBtns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
       event.stopPropagation() // Previne que o clique se propague
       closeAllModals()
+      history.back()
     })
   })
 
@@ -69,8 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.addEventListener("click", (event) => {
       if (event.target === modal) {
         closeAllModals()
+        history.back()
       }
     })
+  })
+
+  // Fecha todos os modais quando o usuário usa o botão de voltar do navegador
+  window.addEventListener("popstate", () => {
+    closeAllModals()
   })
 })
 
