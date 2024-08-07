@@ -180,7 +180,7 @@ ScrollReveal({
 
 //Elementos de destino e opções específicas para criar animações de revelação
 ScrollReveal().reveal(
-  ".home .info h2, .section-titulo-01, .section-titulo-02",
+  ".home .info h2, .section-titulo-01, .section-titulo-02, .section-titulo-03, .section-titulo-04",
   {
     delay: 200,
     origin: "left",
