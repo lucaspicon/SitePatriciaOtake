@@ -145,7 +145,7 @@ li {
   z-index: 999999;
   position: fixed;
   right: 0;
-  top: 150px;
+  top: 80px;
   background: var(--cor-transparente-01);
   backdrop-filter: blur(20px);
   width: 50px;
@@ -200,7 +200,6 @@ header.sticky {
 
 .nav-bar {
   position: relative;
-  height: calc(2rem + 1rem);
   max-width: 1250px;
   display: flex;
   justify-content: space-between;
@@ -210,6 +209,7 @@ header.sticky {
   margin-top: 10px;
   padding: 0 30px;
   transition: 0.6s ease;
+   z-index: 1000;
 }
 
 header.sticky .nav-bar {
@@ -1346,11 +1346,16 @@ footer a {
   }
 }
 
-/*=======Media query max-width 730px=======*/
-@media screen and (max-width: 730px) {
+/*=======Media query max-width 768px=======*/
+@media screen and (max-width: 768px) {
   /*=======Common styles for all sections=======*/
   body {
     margin: 4rem 0 0 0;
+  }
+
+  .nav-bar {
+    padding: 0 10px;
+    margin-top: 5px;
   }
 
   .section-titulo-01 {
@@ -1362,10 +1367,49 @@ footer a {
     transform: translateY(-65px);
   }
 
+  .section-titulo-01,
+  .section-titulo-03 {
+    font-size: 2.5em;
+  }
+
+  .section-titulo-04,
+  .section-titulo-02 {
+    font-size: 1.5em;
+    transform: translateY(-50px);
+  }
+
+  .sobre-img img,
+  .home-container .home-img img {
+    width: 100%;
+    min-width: auto;
+  }
+
   /*=======Home section=======*/
   .home .home-container {
     display: grid;
     margin-top: 80px;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-container .info h2 {
+    font-size: 2em;
+    line-height: 35px;
+  }
+
+  .home-container .info h3 {
+    font-size: 1.5em;
+    line-height: 30px;
+  }
+
+  .button {
+    padding: 10px 20px;
+  }
+
+  .home-container .info p {
+    font-size: 0.9em;
+    max-width: 100%;
   }
 
   .home-container .home-img {
@@ -1373,9 +1417,14 @@ footer a {
   }
 
   .home-container .home-img img {
-    margin-top: 30px;
+    margin-top: 20px;
     width: 65%;
     transform: translate(80px, -180px);
+    height: auto;
+  }
+
+  .home-container .media-icons {
+    margin-bottom: 20px;
   }
 
   .media-icons {
@@ -1388,6 +1437,10 @@ footer a {
 
   .edu-lista .item p span {
     font-size: 15px;
+  }
+
+  .contato-card {
+    justify-content: center;
   }
 
   /*=======Get-in-touch section=======*/
@@ -1417,7 +1470,6 @@ footer a {
     padding: auto;
   }
   .contato-right p {
-    margin-left: 15px;
     justify-content: center;
     text-align: center;
   }
